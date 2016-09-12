@@ -1,4 +1,4 @@
-package uk.co.conclipsegames.projDart.proxy;
+package uk.co.conclipsegames.projDart.Proxy;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
