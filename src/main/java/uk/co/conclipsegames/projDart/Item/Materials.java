@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import uk.co.conclipsegames.projDart.Constants;
+import uk.co.conclipsegames.projDart.InitialisationStuff.Registerer;
 import uk.co.conclipsegames.projDart.ProjectDart;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class Materials extends Item
         super();
         this.setCreativeTab(ProjectDart.pdtab);
         this.setHasSubtypes(true);
-        //RegisterHelper.registerItem(this, "Materials");
+        Registerer.registerItem(this);
     }
 
     @Override
