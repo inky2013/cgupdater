@@ -23,13 +23,12 @@ public class Materials extends Item
             "forgeIngot"
     };
 
-    protected Materials(){
+    protected Materials() {
         super();
         this.setCreativeTab(ProjectDart.pdtab);
         this.setHasSubtypes(true);
         Registerer.registerItem(this);
     }
-
     @Override
     public String getUnlocalizedName(ItemStack stack) {
         return "item."+ Constants.MODID+"."+materials[stack.getItemDamage()];
