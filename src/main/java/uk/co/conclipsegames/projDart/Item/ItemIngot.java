@@ -13,7 +13,7 @@ public class ItemIngot extends ItemProjDart {
 
     public IIcon[] icons = new IIcon[256];
 
-    public ItemDust()
+    public ItemIngot()
     {
         super();
         System.out.println("ITEMINGOT CONSTRUCTOR");
