@@ -8,7 +8,7 @@ public enum Resource {
     FORCE("Force"),
     SILVER("Silver"),
     LEAD("Lead"),
-    ALUMINUM("Aluminum"),
+    ALUMINUM("Aluminum");
 
 
     private String name;
