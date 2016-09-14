@@ -2,6 +2,8 @@ package uk.co.conclipsegames.projDart;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -11,11 +13,23 @@ import uk.co.conclipsegames.projDart.Proxy.CommonProxy;
 @Mod(name = Constants.MODNAME, version = Constants.VERSION, modid = Constants.MODID)
 public class ProjectDart {
 
-    @SidedProxy(clientSide=Constants.BaseClassPath+".Proxy.ClientProxy", serverSide=Constants.BaseClassPath+".Proxy.ServerProxy")
+    @Mod.Instance
+    public static ProjectDart instance = new ProjectDart();
+
+    @SidedProxy(clientSide=Constants.ClientProxy, serverSide=Constants.ServerProxy)
     public static CommonProxy proxy;
 
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-        System.out.println("NOTICE ME SENPAI");
+        proxy.preInit(e);
+    }
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent e) {
+        proxy.init(e);
+    }
+    @Mod.EventHandler
+    public void preInit(FMLPostInitializationEvent e) {
+        proxy.postInit(e);
     }
 
     public static final CreativeTabs pdtab = new CreativeTabs("pdtab") {
