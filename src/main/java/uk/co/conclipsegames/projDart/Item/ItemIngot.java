@@ -25,7 +25,7 @@ public class ItemIngot extends ItemProjDart {
     {
         for(int i = 0; i < Resource.values().length; i++)
         {
-            icons[i] = register.registerIcon(Constants.MODID+":" + Resource.values()[i].getName() + "Dust");
+            icons[i] = register.registerIcon(Constants.MODID+":" + Resource.values()[i].getName() + "Ingot");
         }
     }
 
