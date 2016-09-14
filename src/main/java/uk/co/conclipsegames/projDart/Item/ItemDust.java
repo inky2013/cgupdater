@@ -16,7 +16,6 @@ public class ItemDust extends ItemProjDart {
     public ItemDust()
     {
         super();
-        System.out.println("ITEMDUST CONSTRUCTOR");
         setHasSubtypes(true);
     }
 

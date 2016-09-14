@@ -11,7 +11,6 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
         System.out.println("PREINIT");
-        //ItemDust.registerItems();
         Items.init();
     }
     public void init(FMLInitializationEvent e) {

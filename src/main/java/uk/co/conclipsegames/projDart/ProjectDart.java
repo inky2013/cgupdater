@@ -13,6 +13,16 @@ import uk.co.conclipsegames.projDart.Proxy.CommonProxy;
 @Mod(name = Constants.MODNAME, version = Constants.VERSION, modid = Constants.MODID)
 public class ProjectDart {
 
+    public ProjectDart() {
+        String[] supportedMods = {
+                "ThermalFoundation"
+        };
+
+        for(String item : supportedMods) {
+            //Do the loady thing later
+        }
+    }
+
     @Mod.Instance
     public static ProjectDart instance = new ProjectDart();
 

@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 
 public class Items {
     public static Item forceGem;
-    public static Item materials;
     public static ItemDust itemDust;
 
     public static final void init() {

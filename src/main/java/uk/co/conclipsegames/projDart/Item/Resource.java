@@ -5,6 +5,7 @@ public enum Resource {
     GOLD("Gold"),
     COPPER("Copper"),
     TIN("Tin"),
+    FORCE("Force"),
     SILVER("Silver"),
     LEAD("Lead"),
     ALUMINUM("Aluminum"),
