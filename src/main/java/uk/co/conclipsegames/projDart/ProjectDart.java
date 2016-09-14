@@ -26,7 +26,11 @@ public class ProjectDart {
         };
 
         for(String item : supportedMods) {
-            if Loader.isModLoaded(item)
+            if (Loader.isModLoaded(item)) {
+                loadedMods.put(item, true);
+            } else {
+                loadedMods.put(item, false);
+            }
         }
     }
 
