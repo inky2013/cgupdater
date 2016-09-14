@@ -16,7 +16,6 @@ public class ItemIngot extends ItemProjDart {
     public ItemIngot()
     {
         super();
-        System.out.println("ITEMINGOT CONSTRUCTOR");
         setHasSubtypes(true);
     }
 
