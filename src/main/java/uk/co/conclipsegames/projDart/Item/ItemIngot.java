@@ -13,6 +13,8 @@ public class ItemIngot extends ItemProjDart {
 
     public IIcon[] icons = new IIcon[256];
 
+
+
     public ItemIngot()
     {
         super();
@@ -24,7 +26,9 @@ public class ItemIngot extends ItemProjDart {
     {
         for(int i = 0; i < Resource.values().length; i++)
         {
-            icons[i] = register.registerIcon(Constants.MODID+":" + Resource.values()[i].getName() + "Ingot");
+            if (!(Resource.values()[i].getName() == "iron") || (Resource.values()[i].getName() == "gold")) {
+                icons[i] = register.registerIcon(Constants.MODID + ":" + Resource.values()[i].getName() + "Ingot");
+            }
         }
     }
 
@@ -48,7 +52,9 @@ public class ItemIngot extends ItemProjDart {
     {
         if(item.getItemDamage() <= Resource.values().length-1)
         {
-            return "item." + Resource.values()[item.getItemDamage()].getName().toLowerCase() + "Ingot";
+            if (!(Resource.values()[item.getItemDamage()].getName() == "iron") || (Resource.values()[item.getItemDamage()].getName() == "gold")) {
+                return "item." + Resource.values()[item.getItemDamage()].getName().toLowerCase() + "Ingot";
+            }
         }
 
         return "Invalid";
