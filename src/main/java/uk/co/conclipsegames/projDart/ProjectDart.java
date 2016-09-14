@@ -7,9 +7,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
+import uk.co.conclipsegames.projDart.Item.PDItems;
 import uk.co.conclipsegames.projDart.Proxy.CommonProxy;
 
 import java.util.HashMap;
@@ -57,7 +57,7 @@ public class ProjectDart {
 
     public static final CreativeTabs pdtab = new CreativeTabs("pdtab") {
         @Override public Item getTabIconItem() {
-            return uk.co.conclipsegames.projDart.Item.Items.forceGem;
+            return PDItems.forceGem;
         }
     };
 
