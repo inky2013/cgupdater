@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.config.Configuration;
 import uk.co.conclipsegames.projDart.Proxy.CommonProxy;
 
 @Mod(name = Constants.MODNAME, version = Constants.VERSION, modid = Constants.MODID)
@@ -31,6 +32,8 @@ public class ProjectDart {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
+        Configuration Config = new Configuration(e.getSuggestedConfigurationFile());
+
         proxy.preInit(e);
     }
     @Mod.EventHandler

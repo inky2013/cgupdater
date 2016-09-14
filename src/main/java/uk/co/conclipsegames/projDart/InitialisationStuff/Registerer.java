@@ -3,7 +3,6 @@ package uk.co.conclipsegames.projDart.InitialisationStuff;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import uk.co.conclipsegames.projDart.Constants;
-import uk.co.conclipsegames.projDart.Item.Materials;
 
 public class Registerer {
 

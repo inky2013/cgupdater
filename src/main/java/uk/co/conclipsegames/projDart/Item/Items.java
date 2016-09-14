@@ -7,11 +7,13 @@ import net.minecraft.item.Item;
 public class Items {
     public static Item forceGem;
     public static ItemDust itemDust;
+    public static ItemIngot itemIngot;
 
     public static final void init() {
         forceGem = new Item().setUnlocalizedName("Force Gem").setCreativeTab(CreativeTabs.tabMisc);
         itemDust = new ItemDust();
         GameRegistry.registerItem(forceGem, "forceGem");
         GameRegistry.registerItem(itemDust, "itemDust");
+        GameRegistry.registerItem(itemIngot, "itemIngot");
     }
 }
