@@ -14,6 +14,6 @@ public class Items {
         itemDust = new ItemDust();
         GameRegistry.registerItem(forceGem, "forceGem");
         GameRegistry.registerItem(itemDust, "itemDust");
-        GameRegistry.registerItem(itemIngot, "itemIngot");
+        //GameRegistry.registerItem(itemIngot, "itemIngot");
     }
 }

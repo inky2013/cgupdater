@@ -1,5 +1,6 @@
 package uk.co.conclipsegames.projDart;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -11,8 +12,13 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 import uk.co.conclipsegames.projDart.Proxy.CommonProxy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Mod(name = Constants.MODNAME, version = Constants.VERSION, modid = Constants.MODID)
 public class ProjectDart {
+
+    Map<String, Boolean> loadedMods = new HashMap<String, Boolean>();
 
     public ProjectDart() {
         String[] supportedMods = {
@@ -20,7 +26,7 @@ public class ProjectDart {
         };
 
         for(String item : supportedMods) {
-            //Do the loady thing later
+            if Loader.isModLoaded(item)
         }
     }
 
