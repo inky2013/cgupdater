@@ -12,8 +12,9 @@ public class Items {
     public static final void init() {
         forceGem = new Item().setUnlocalizedName("Force Gem").setCreativeTab(CreativeTabs.tabMisc);
         itemDust = new ItemDust();
+        itemIngot = new ItemIngot();
         GameRegistry.registerItem(forceGem, "forceGem");
         GameRegistry.registerItem(itemDust, "itemDust");
-        //GameRegistry.registerItem(itemIngot, "itemIngot");
+        GameRegistry.registerItem(itemIngot, "itemIngot");
     }
 }
