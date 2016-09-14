@@ -57,7 +57,7 @@ public class ProjectDart {
 
     public static final CreativeTabs pdtab = new CreativeTabs("pdtab") {
         @Override public Item getTabIconItem() {
-            return Items.golden_apple;
+            return uk.co.conclipsegames.projDart.Item.Items.forceGem;
         }
     };
 
