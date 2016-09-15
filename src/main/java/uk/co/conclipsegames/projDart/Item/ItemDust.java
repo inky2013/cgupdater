@@ -13,6 +13,8 @@ public class ItemDust extends ItemProjDart {
 
     public IIcon[] icons = new IIcon[256];
 
+    public static String[] en_USNames = Constants.DustMaterials;
+
     public ItemDust()
     {
         super();
@@ -22,9 +24,9 @@ public class ItemDust extends ItemProjDart {
     @Override
     public void registerIcons(IIconRegister register)
     {
-        for(int i = 0; i < Resource.values().length; i++)
+        for(int i = 0; i <= 6; i++)
         {
-            icons[i] = register.registerIcon(Constants.MODID+":" + Resource.values()[i].getName() + "Dust");
+            icons[i] = register.registerIcon(Constants.MODID+":" + en_USNames[i] + "Dust");
         }
     }
 
@@ -37,21 +39,15 @@ public class ItemDust extends ItemProjDart {
     @Override
     public void getSubItems(Item item, CreativeTabs tabs, List itemList)
     {
-        for(int counter = 0; counter < Resource.values().length; counter++)
+        for(int counter = 0; counter <= 6; counter++)
         {
-            itemList.add(new ItemStack(this, 1, counter));
+            itemList.add(new ItemStack(item, 1, counter));
         }
     }
 
     @Override
     public String getUnlocalizedName(ItemStack item)
     {
-        if(item.getItemDamage() <= Resource.values().length-1)
-        {
-            return "item." + Resource.values()[item.getItemDamage()].getName().toLowerCase() + "Dust";
-        }
-
-        return "Invalid";
+        return "item." + en_USNames[item.getItemDamage()].toLowerCase() + "Dust";
     }
-
 }
