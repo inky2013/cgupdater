@@ -26,7 +26,7 @@ public class ItemDust extends ItemProjDart {
     {
         for(int i = 0; i <= en_USNames.length-1; i++)
         {
-            //icons[i] = register.registerIcon(Constants.MODID+":" + en_USNames[i] + "Dust");
+            icons[i] = register.registerIcon(Constants.MODID+":" + en_USNames[i] + "Dust");
         }
     }
 

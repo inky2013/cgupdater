@@ -3,6 +3,7 @@ package uk.co.conclipsegames.projDart.Item;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import uk.co.conclipsegames.projDart.Constants;
 import uk.co.conclipsegames.projDart.ProjectDart;
 
 public class PDItems {
@@ -11,7 +12,7 @@ public class PDItems {
     public static ItemIngot itemIngot;
 
     public static final void init() {
-        forceGem = new Item().setUnlocalizedName("forceGem").setCreativeTab(ProjectDart.pdtab);
+        forceGem = new Item().setUnlocalizedName("forceGem").setCreativeTab(ProjectDart.pdtab).setTextureName(Constants.MODID+":forceGem");
         itemDust = new ItemDust();
         itemIngot = new ItemIngot();
         GameRegistry.registerItem(forceGem, "forceGem");
