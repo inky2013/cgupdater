@@ -24,7 +24,7 @@ public class ItemIngot extends ItemProjDart {
     @Override
     public void registerIcons(IIconRegister register)
     {
-        for(int i = 0; i <= 6; i++)
+        for(int i = 0; i <= en_USNames.length-1; i++)
         {
             icons[i] = register.registerIcon(Constants.MODID+":" + en_USNames[i] + "Ingot");
         }
@@ -39,7 +39,7 @@ public class ItemIngot extends ItemProjDart {
     @Override
     public void getSubItems(Item item, CreativeTabs tabs, List itemList)
     {
-        for(int counter = 0; counter <= 6; counter++)
+        for(int counter = 0; counter <= en_USNames.length-1; counter++)
         {
             itemList.add(new ItemStack(item, 1, counter));
         }
