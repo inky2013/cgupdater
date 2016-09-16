@@ -12,7 +12,7 @@ public class PDCrafting {
         GameRegistry.addShapelessRecipe(new ItemStack(PDItems.itemIngot, 2, 1), new Object[] {Items.gold_ingot, Items.gold_ingot, PDItems.forceGem});
         GameRegistry.addShapelessRecipe(new ItemStack(PDItems.itemIngot, 1, 1), new Object[] {Items.gold_ingot, PDItems.forceGem});
         GameRegistry.addShapelessRecipe(new ItemStack(PDItems.itemIngot, 1, 1), new Object[] {Items.iron_ingot, Items.iron_ingot, PDItems.forceGem});
-        GameRegistry.addSmelting(new ItemStack(PDItems.itemDust, 1, 1), new ItemStack(PDItems.itemIngot, 1, 1), 4F);
+        GameRegistry.addSmelting(new ItemStack(PDItems.itemDust, 1, 3), new ItemStack(PDItems.itemIngot, 1, 1), 4F);
 
     }
 }

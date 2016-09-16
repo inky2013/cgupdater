@@ -10,10 +10,12 @@ public class PDItems {
     public static Item forceGem;
     public static ItemDust itemDust;
     public static ItemIngot itemIngot;
+    public static ItemIgnitedForce itemIgnitedForce;
 
     public static final void init() {
         forceGem = new Item().setUnlocalizedName("forceGem").setCreativeTab(ProjectDart.pdtab).setTextureName(Constants.MODID+":forceGem");
         itemDust = new ItemDust();
+        itemIgnitedForce = new ItemIgnitedForce();
         itemIngot = new ItemIngot();
         GameRegistry.registerItem(forceGem, "forceGem");
         GameRegistry.registerItem(itemDust, "itemDust");
