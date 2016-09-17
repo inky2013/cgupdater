@@ -1,7 +1,6 @@
 package uk.co.conclipsegames.projDart.Item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import uk.co.conclipsegames.projDart.Constants;
 import uk.co.conclipsegames.projDart.ProjectDart;
@@ -18,6 +17,7 @@ public class PDItems {
         itemIgnitedForce = new ItemIgnitedForce();
         itemIngot = new ItemIngot();
         GameRegistry.registerItem(forceGem, "forceGem");
+        GameRegistry.registerItem(itemIgnitedForce, "itemIgnitedForce");
         GameRegistry.registerItem(itemDust, "itemDust");
         GameRegistry.registerItem(itemIngot, "itemIngot");
     }

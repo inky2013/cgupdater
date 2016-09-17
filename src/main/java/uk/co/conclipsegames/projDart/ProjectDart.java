@@ -1,5 +1,6 @@
 package uk.co.conclipsegames.projDart;
 
+import com.google.common.base.Strings;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -8,6 +9,8 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import net.minecraftforge.common.config.Configuration;
 import uk.co.conclipsegames.projDart.Item.PDItems;
 import uk.co.conclipsegames.projDart.Proxy.CommonProxy;
@@ -33,6 +36,31 @@ public class ProjectDart {
             }
         }
     }
+    public static final boolean isClientWorld(World world) {
+
+        return world.isRemote;
+    }
+
+    public static final boolean isServerWorld(World world) {
+
+        return !world.isRemote;
+    }
+    public static NBTTagCompound setItemStackTagName(NBTTagCompound tag, String name) {
+
+        if (Strings.isNullOrEmpty(name)) {
+            return null;
+        }
+        if (tag == null) {
+            tag = new NBTTagCompound();
+        }
+        if (!tag.hasKey("display")) {
+            tag.setTag("display", new NBTTagCompound());
+        }
+        tag.getCompoundTag("display").setString("Name", name);
+
+        return tag;
+    }
+
 
     @Mod.Instance
     public static ProjectDart instance = new ProjectDart();

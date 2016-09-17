@@ -8,7 +8,7 @@ public class ItemIgnitedForce extends ItemProjDart implements IFuelHandler {
 
     public ItemIgnitedForce() {
 
-        this.setUnlocalizedName("forceGem");
+        this.setUnlocalizedName("itemIgnitedForce");
         this.setTextureName(Constants.MODID + ":hotForceGem");
     }
 
