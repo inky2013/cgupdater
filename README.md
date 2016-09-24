@@ -17,4 +17,9 @@ The URL must have the protocol (eg: 'http://example.com/modpack/scripts')
 - In <code>mission-control.list</code> write the name of each file on a new line.
 
 #####mission-control.list example:
-<code>recipes.zs<br/>furnace.zs<br/>tweaks.zs</code>
+```
+recipes.zs
+furnace.zs
+tweaks.zs
+```
+
