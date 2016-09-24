@@ -3,6 +3,8 @@
 A Minecraft 1.7.10 mod to download files from the internet.
 You can also view a working example at https://github.com/inky2013/inky2013.github.io/tree/master/modpacks/thinktank
 
+The purpose of this mod is to download files such as config or minetweaker scripts from a web server. This means files can be updated without having to update the modpack. This mod can be especially useful if you own a server maintained by multiple people who need a quick and easy way to push updates to the config or recipes without forcing users to update the modpack or even leave the server.
+
 #####Commands:
 - ```/showloadedupdates``` Prints a list of each script available to download.
 - ```/update <command-name>``` command-name refers to a line in updates.list.
