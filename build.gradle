@@ -19,8 +19,8 @@ apply plugin: 'forge'
 
 //version = getVersionFromJava(file("src/main/java/uk/co/conclipsegames/projectdart/libs/Constants.java"))
 version = "1.0"
-group= "uk.co.conclipsegames.projectdart"
-archivesBaseName = "projectdart"
+group= "uk.co.conclipsegames.cgupdater"
+archivesBaseName = "cgupdater"
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
