@@ -3,6 +3,7 @@ package uk.co.conclipsegames.cgupdater;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import org.apache.commons.io.FileUtils;
 
@@ -58,8 +59,8 @@ public class UpdateCmd implements ICommand {
             for(int i=0;i< args.length; i++) {
                 url = CGUpdater.updateLoc.get(args[i]);
                 if (url == null) {
-                    sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+args[i]+" was not found in the config."));
-                    sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+" if it has been recently added try running "+EnumChatFormatting.WHITE+"/reloadupdates"));
+                    sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"'"+args[i]+"' was not found in the config."));
+                    sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"If it has been recently added try running "+EnumChatFormatting.WHITE+"/reloadupdates"));
                 } else {
                     if (!(url.endsWith("/"))) { url = url+"/"; }
                     url = url+"mission-control.list";

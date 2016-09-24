@@ -3,6 +3,7 @@ package uk.co.conclipsegames.cgupdater;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import org.apache.commons.io.FileUtils;
 
@@ -12,10 +13,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdateCmd implements ICommand {
+public class ReloadLists implements ICommand {
     private final List aliases;
 
-    public UpdateCmd()
+    public ReloadLists()
     {
         aliases = new ArrayList();
         aliases.add("reloadupdates");
@@ -48,7 +49,7 @@ public class UpdateCmd implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
-        CGUpdater.reloadConfig();
+        CGUpdater.instance.reloadConfig();
         sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE+"Config Reloaded"));
     }
 

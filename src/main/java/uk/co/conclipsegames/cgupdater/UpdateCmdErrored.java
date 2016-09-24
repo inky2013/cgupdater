@@ -3,6 +3,7 @@ package uk.co.conclipsegames.cgupdater;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.entity.EntityList;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;

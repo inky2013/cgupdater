@@ -41,6 +41,7 @@ public class CGUpdater {
         if (updateslistdidload) {
             event.registerServerCommand(new UpdateCmd());
             event.registerServerCommand(new ShowLoadedUpdates());
+            event.registerServerCommand(new ReloadLists());
         } else {
             event.registerServerCommand(new UpdateCmd());
         }

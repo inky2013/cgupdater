@@ -2,7 +2,9 @@ package uk.co.conclipsegames.cgupdater;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -45,9 +47,13 @@ public class ShowLoadedUpdates implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
-        sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE+"Loaded Update Commands:"));
-        for (int x=0; x<CGUpdater.loadedKeys.size(); x++) {
-            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE+" - "+EnumChatFormatting.WHITE+CGUpdater.loadedKeys.get(x)));
+        if (CGUpdater.loadedKeys.size() != 0) {
+            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "Loaded Update Commands:"));
+            for (int x = 0; x < CGUpdater.loadedKeys.size(); x++) {
+                sender.addChatMessage(new ChatComponentText(EnumChatFormatting.WHITE + " - " + EnumChatFormatting.BLUE + CGUpdater.loadedKeys.get(x)));
+            }
+        } else {
+            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "No updates in config"));
         }
     }
 
