@@ -87,7 +87,13 @@ public class UpdateCmd implements ICommand {
                     } catch (IOException e) { sender.addChatMessage(new ChatComponentText("(IO)Error while at mission control for " + args[i])); }
                     for (int y=0; y<urls.size(); y++) {
                         try {
-                            FileUtils.copyURLToFile(new URL(CGUpdater.updateLoc.get(args[i]) + urls.get(y)), new File(CGUpdater.saveLoc.get(args[i]) + "/" + urls.get(y)));
+                            String urlf;
+                            if ((urls.get(y).startsWith("http://")) || (urls.get(y).startsWith("http://"))) {
+                                urlf = urls.get(y); //Absolute URL
+                            } else {
+                                urlf = CGUpdater.updateLoc.get(args[i]) + urls.get(y); //Relative URL
+                            }
+                            FileUtils.copyURLToFile(new URL(urlf), new File(CGUpdater.saveLoc.get(args[i]) + "/" + urls.get(y)));
                         } catch (IOException ioe) {
                             sender.addChatMessage(new ChatComponentText("Error Downloading "+urls.get(y)));
                         }
