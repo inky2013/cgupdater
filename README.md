@@ -9,7 +9,7 @@ You can also view a working example at https://github.com/inky2013/inky2013.gith
 
 #####Adding scripts to update:
 Open ```updates.list``` in the config folder and write:<br/>
-<code>&lt;command-name&gt;=&lt;install-folder&gt;=&lt;url&gt;</code><br/>
+<code>&lt;command-name&gt;;&lt;install-folder&gt;;&lt;url&gt;</code><br/>
 The install folder is relative to the server/minecraft install directory.
 The URL must have the protocol (eg: 'http://example.com/modpack/scripts')<br>
 so for example you could have <code>recipes=scripts=example.com/mission-control.list</code>
