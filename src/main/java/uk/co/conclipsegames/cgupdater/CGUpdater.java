@@ -52,7 +52,7 @@ public class CGUpdater {
         if ((f.exists()) && (f.isFile())) {
             try {
                 for (String line : FileUtils.readLines(f)) {
-                    cline = line.split("=");
+                    cline = line.split(";");
                     if (cline.length == 3) {
                         updateLoc.put(cline[0], cline[2]);
                         saveLoc.put(cline[0], cline[1]);
