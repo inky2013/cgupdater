@@ -1,8 +1,13 @@
-# Project: Dart
+# CGUpdater
 
-Minecraft 1.7.10 forge mod currently in development.
+A Minecraft 1.7.10 mod to download files from the internet.
 
-######Instructions on how to edit for the acrominer:
-1. ```git pull``` to update your local workspace with the stuff on github
-2. ```git commit <path-to-file> -m '<Commit Message>'``` to commit the stuff locally
-3. ```git push commit master``` to put your stuff on github
+#####Commands:
+- ```/showloadedupdates``` Prints a list of each script available to download.
+- ```/update <script>``` Updates the script
+#####Adding scripts to update:
+Open ```updates.list``` in the config folder and write:
+```<command-name>=<install-folder>=<url>```
+The install folder is relative to the server/minecraft install directory.
+The URL must have the protocol (eg: 'http://example.com/modpack/scripts')
+#####Se
