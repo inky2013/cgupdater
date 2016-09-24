@@ -3,8 +3,6 @@
 A Minecraft 1.7.10 mod to download files from the internet.
 You can also view a working example at https://github.com/inky2013/inky2013.github.io/tree/master/modpacks/thinktank
 
-##MINETWEAKER EXECUTES THE SCRIPTS GET IT AT http://minetweaker3.powerofbytes.com/!  
-
 #####Commands:
 - ```/showloadedupdates``` Prints a list of each script available to download.
 - ```/update <command-name>``` command-name refers to a line in updates.list.
