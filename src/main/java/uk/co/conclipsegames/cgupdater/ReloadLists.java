@@ -48,7 +48,8 @@ public class UpdateCmd implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
-        CGUpdater.something
+        CGUpdater.getUpdateConfig();
+        sender.addChatMessage(new ChatComponentText("Config Updated"));
     }
 
     @Override
