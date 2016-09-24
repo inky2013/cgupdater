@@ -45,6 +45,14 @@ public class CGUpdater {
             event.registerServerCommand(new UpdateCmd());
         }
     }
+    public void reloadConfig() {
+        // Reset hashmaps and arraylists
+        updateslistdidload = true;
+        loadedKeys.clear();
+        updateLoc.clear();
+        saveLoc.clear();
+        getUpdateConfig();
+    }
     public void getUpdateConfig() {
         String cline[];
         File f = new File(CFGPATH);
