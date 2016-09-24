@@ -45,8 +45,9 @@ public class ShowLoadedUpdates implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
+        sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE+"Loaded Update Commands:"));
         for (int x=0; x<CGUpdater.loadedKeys.size(); x++) {
-            sender.addChatMessage(new ChatComponentText(CGUpdater.loadedKeys.get(x)));
+            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE+" - "+EnumChatFormatting.WHITE+CGUpdater.loadedKeys.get(x)));
         }
     }
 
