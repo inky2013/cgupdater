@@ -47,8 +47,8 @@ public class UpdateCmdErrored implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
-        sender.addChatMessage(new ChatComponentText("There was an error loading the config at startup."));
-        sender.addChatMessage(new ChatComponentText("Restart Minecraft (or the server if you are on a server) to reload the scripts."));
+        sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"There was an error loading the config."));
+        sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Run "+EnumChatFormatting.WHITE+"/reloadupdates "+EnumChatFormatting.RED+"to reload the config"));
     }
 
     @Override
