@@ -53,9 +53,7 @@ public class ShowLoadedUpdates implements ICommand {
 
     @Override
     public boolean canCommandSenderUseCommand(ICommandSender var1)
-    {
-        return true;
-    }
+    { return true; }
 
     @Override
     public List addTabCompletionOptions(ICommandSender var1, String[] var2)
