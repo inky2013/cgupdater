@@ -11,7 +11,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.Pack200;
 
 public class UpdateCmd implements ICommand {
     private final List aliases;
@@ -54,12 +53,13 @@ public class UpdateCmd implements ICommand {
 
         if (!(world.isRemote)) {
             if (args.length == 0) {
-                sender.addChatMessage(new ChatComponentText("Usage: /update <group> (groups are set in config)"));
+                sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Usage: "+EnumChatFormatting.WHITE+"/update <group> "+EnumChatFormatting.RED+"(groups are set in config)"));
             }
             for(int i=0;i< args.length; i++) {
                 url = CGUpdater.updateLoc.get(args[i]);
                 if (url == null) {
-                    sender.addChatMessage(new ChatComponentText(args[i]+" was not found in the config."));
+                    sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+args[i]+" was not found in the config."));
+                    sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+" if it has been recently added try running "+EnumChatFormatting.WHITE+"/reloadupdates"));
                 } else {
                     if (!(url.endsWith("/"))) { url = url+"/"; }
                     url = url+"mission-control.list";
@@ -67,14 +67,14 @@ public class UpdateCmd implements ICommand {
                     try {
                         u = new URL(url);
                     } catch (MalformedURLException e) {
-                        sender.addChatMessage(new ChatComponentText(args[i]+" URL is invalid."));
+                        sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+args[i]+" URL is invalid."));
                         continue;
                     }
                     BufferedReader in;
                     try {
                         in = new BufferedReader(new InputStreamReader(u.openStream()));
                     } catch (IOException e) {
-                        sender.addChatMessage(new ChatComponentText("Error while at mission control for " + args[i]));
+                        sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Error while at mission control for " + args[i]));
                         continue;
                     }
 
@@ -84,7 +84,7 @@ public class UpdateCmd implements ICommand {
                         while ((inputLine = in.readLine()) != null)
                             urls.add(inputLine);
                         in.close();
-                    } catch (IOException e) { sender.addChatMessage(new ChatComponentText("(IO)Error while at mission control for " + args[i])); }
+                    } catch (IOException e) { sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Error while at mission control for " + args[i])); }
                     for (int y=0; y<urls.size(); y++) {
                         try {
                             String urlf;
@@ -95,7 +95,7 @@ public class UpdateCmd implements ICommand {
                             }
                             FileUtils.copyURLToFile(new URL(urlf), new File(CGUpdater.saveLoc.get(args[i]) + "/" + urls.get(y)));
                         } catch (IOException ioe) {
-                            sender.addChatMessage(new ChatComponentText("Error Downloading "+urls.get(y)));
+                            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Error Downloading "+urls.get(y)));
                         }
 
 
