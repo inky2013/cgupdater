@@ -1,6 +1,7 @@
 # CGUpdater
 
 A Minecraft 1.7.10 mod to download files from the internet.
+You can also view a working example [here]('inky2013.github.io/modpacks/thinktank')
 
 #####Commands:
 - ```/showloadedupdates``` Prints a list of each script available to download.
