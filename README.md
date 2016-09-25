@@ -7,7 +7,12 @@ The purpose of this mod is to download files such as config or minetweaker scrip
 
 #####Commands:
 - ```/showloadedupdates``` Prints a list of each script available to download.
-- ```/update <command-name>``` command-name refers to a line in updates.list.
+- ```/update <group>``` group refers to a line in updates.list.
+- ```/reloadupdates``` reloads the ```updates.list``` file from config
+- ```/directupdate <save-directory> <URL>``` downloads the file at the URL to the save-directory
+
+The ```/update``` command can update multiple groups at once. Each group can be added as an additional argument.
+Eg: ```/update <group1> <group2> <group3>```
 
 #####Adding scripts to update:
 Open ```updates.list``` in the config folder and write:<br/>
@@ -24,6 +29,6 @@ so for example you could have <code>recipes;scripts;example.com/example/</code>
 ```
 recipes.zs
 furnace.zs
-tweaks.zs
+http://other-website.com/modpack/tweaks.zs
 ```
 
