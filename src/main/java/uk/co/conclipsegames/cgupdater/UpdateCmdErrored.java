@@ -2,6 +2,8 @@ package uk.co.conclipsegames.cgupdater;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.player.EntityPlayer;
+import uk.co.conclipsegames.cgupdater.CGUpdater;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.entity.EntityList;
@@ -48,6 +50,14 @@ public class UpdateCmdErrored implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
+        if(sender instanceof EntityPlayer)
+        {
+            EntityPlayer player = (EntityPlayer) sender;
+            if (!(uk.co.conclipsegames.cgupdater.CGUpdater.IsOp(player))) {
+                sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"You are not opped on this server!"));
+                return;
+            }
+        }
         sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"There was an error loading the config."));
         sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Run "+EnumChatFormatting.WHITE+"/reloadupdates "+EnumChatFormatting.RED+"to reload the config"));
     }

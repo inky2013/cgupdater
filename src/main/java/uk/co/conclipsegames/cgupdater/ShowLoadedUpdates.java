@@ -2,6 +2,8 @@ package uk.co.conclipsegames.cgupdater;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.player.EntityPlayer;
+import uk.co.conclipsegames.cgupdater.CGUpdater;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
@@ -47,6 +49,14 @@ public class ShowLoadedUpdates implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
+        if(sender instanceof EntityPlayer)
+        {
+            EntityPlayer player = (EntityPlayer) sender;
+            if (!(uk.co.conclipsegames.cgupdater.CGUpdater.IsOp(player))) {
+                sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"You are not opped on this server!"));
+                return;
+            }
+        }
         if (CGUpdater.loadedKeys.size() != 0) {
             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "Loaded Update Commands:"));
             for (int x = 0; x < CGUpdater.loadedKeys.size(); x++) {

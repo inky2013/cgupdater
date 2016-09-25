@@ -1,9 +1,11 @@
 package uk.co.conclipsegames.cgupdater;
 
 import cpw.mods.fml.common.Mod;
+import net.minecraft.entity.player.EntityPlayer;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import org.apache.commons.io.FileUtils;
+import net.minecraft.server.MinecraftServer;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -42,10 +44,14 @@ public class CGUpdater {
             event.registerServerCommand(new UpdateCmd());
             event.registerServerCommand(new ShowLoadedUpdates());
             event.registerServerCommand(new ReloadLists());
+            event.registerServerCommand(new DirectUpdate());
         } else {
             event.registerServerCommand(new UpdateCmd());
+            event.registerServerCommand(new ReloadLists());
         }
     }
+    public static boolean IsOp(EntityPlayer player) {
+        return MinecraftServer.getServer().getConfigurationManager().func_152596_g(player.getGameProfile());}
     public void reloadConfig() {
         // Reset hashmaps and arraylists
         updateslistdidload = true;

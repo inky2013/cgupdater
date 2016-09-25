@@ -1,6 +1,8 @@
 package uk.co.conclipsegames.cgupdater;
 
 import net.minecraft.command.ICommand;
+import net.minecraft.entity.player.EntityPlayer;
+import uk.co.conclipsegames.cgupdater.CGUpdater;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
@@ -52,6 +54,15 @@ public class UpdateCmd implements ICommand {
         String url;
         World world = sender.getEntityWorld();
 
+        if(sender instanceof EntityPlayer)
+        {
+            EntityPlayer player = (EntityPlayer) sender;
+            if (!(CGUpdater.IsOp(player))) {
+                sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"You are not opped on this server!"));
+                return;
+            }
+        }
+
         if (!(world.isRemote)) {
             if (args.length == 0) {
                 sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Usage: "+EnumChatFormatting.WHITE+"/update <group> "+EnumChatFormatting.RED+"(groups are set in config)"));
@@ -95,6 +106,7 @@ public class UpdateCmd implements ICommand {
                                 urlf = CGUpdater.updateLoc.get(args[i]) + urls.get(y); //Relative URL
                             }
                             FileUtils.copyURLToFile(new URL(urlf), new File(CGUpdater.saveLoc.get(args[i]) + "/" + urls.get(y)));
+                            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN+"Downloaded "+urls.get(y)));
                         } catch (IOException ioe) {
                             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"Error Downloading "+urls.get(y)));
                         }

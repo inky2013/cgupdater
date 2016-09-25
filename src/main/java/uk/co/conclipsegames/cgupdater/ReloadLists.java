@@ -3,6 +3,8 @@ package uk.co.conclipsegames.cgupdater;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.entity.player.EntityPlayer;
+import uk.co.conclipsegames.cgupdater.CGUpdater;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import org.apache.commons.io.FileUtils;
@@ -49,6 +51,14 @@ public class ReloadLists implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args)
     {
+        if(sender instanceof EntityPlayer)
+        {
+            EntityPlayer player = (EntityPlayer) sender;
+            if (!(uk.co.conclipsegames.cgupdater.CGUpdater.IsOp(player))) {
+                sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED+"You are not opped on this server!"));
+                return;
+            }
+        }
         CGUpdater.instance.reloadConfig();
         sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE+"Config Reloaded"));
     }
