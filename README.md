@@ -6,7 +6,7 @@ You can also view a working example at https://github.com/inky2013/inky2013.gith
 The purpose of this mod is to download files such as config or minetweaker scripts from a web server. This means files can be updated without having to update the modpack. This mod can be especially useful if you own a server maintained by multiple people who need a quick and easy way to push updates to the config or recipes without forcing users to update the modpack or even leave the server.
 
 #####Commands:
-- ```/showloadedupdates``` Prints a list of each script available to download.
+- ```/showloadedupdates``` Prints each group in ```updates.list```
 - ```/update <group>``` group refers to a line in updates.list.
 - ```/reloadupdates``` reloads the ```updates.list``` file from config
 - ```/directupdate <save-directory> <URL>``` downloads the file at the URL to the save-directory
